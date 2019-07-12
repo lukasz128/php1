@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+	box-sizing: border-box;
+}
+body {
+	margin:0;
+	font-family: 'Lato', sans-serif;
+	background: #F4F4F4;
+	color: #333;
+}
+
+/* Header */
+
+.main-header {
+	background: #FFF;
+	padding: .5rem;
+	color: #333;
+	position: fixed;
+	width: 100%;
+	transition: padding 500ms;
+}
+.main-header::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #FF8C00;
+	animation: border_header_animation 1500ms;
+}
+
+/* Navigation */
+
+.main-header .main-nav {
+	text-align: center;
+}
+.main-header .main-nav .main-list {
+	list-style: none;
+	padding-left: 0;
+}
+.main-header .main-nav .main-list .item {
+	display: inline;
+	margin-right: .5rem;
+}
+.main-header .main-nav .main-list .item:first-child {
+	float: left;
+}
+.main-header .main-nav .main-list .item a {
+	color: inherit;
+	transition: 500ms color;
+}
+.main-header .main-nav .main-list .item a:hover,
+.main-header .main-nav .main-list .item a:focus {
+	color: #000;
+}
+.main-header .main-nav .main-list .item a > .title {
+	font-size: 1.5rem;
+	display: inline-block;
+	margin: 0;
+}
+.main-header .main-nav .main-list .item > .links {
+	display: inline-block;
+	padding: .5rem 0;
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	transform: color 500ms;
+}
+.main-header .main-nav .main-list .item > .links:hover,
+.main-header .main-nav .main-list .item > .links:focus {
+	color: #000;
+}
+.main-header .main-nav .main-list .item > .links::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	height: 1px;
+	width: 0;
+	background: #FF8C00;
+	transition: width 500ms;
+}
+.main-header .main-nav .main-list .item > .links::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	height: 1px;
+	width: 0;
+	background: #FF8C00;
+	transition: width 500ms;
+}
+.main-header .main-nav .main-list .item > .links:hover::before,
+.main-header .main-nav .main-list .item > .links:focus::before,
+.main-header .main-nav .main-list .item > .links:hover::after,
+.main-header .main-nav .main-list .item > .links:focus::after  {
+	width: 50%;
+}
+
+/* Main Section */
+
+.container .insert-form .form {
+	padding: 0 3rem;
+}
+.container .insert-form .form form .description {
+	height: 150px;
+	resize: none;
+}
+.container .main-content {
+	width: 100%;
+	margin: 1rem 0;
+}
+
+.contact{
+    letter-spacing: 1px;
+    white-space: pre;
+    text-align: center;
+    font-style: oblique;
+}
+
+/* Footer */
+
+.main-footer > .title {
+	font-size: 1.5rem;
+	font-style: italic;
+}
+
+/* Scroll element */
+
+.scroll-up {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	font-size: 2rem;
+	border: 1px solid #000;
+	border-radius: 100%;
+	display: none;
+	cursor: pointer;
+	padding: .3rem 1rem;
+	color: #000;
+	z-index: 999;
+	background: #FFF;
+	transition: all 500ms;
+}
+.scroll-up:hover,
+.scroll-up:focus {
+	color: #FFF;
+	background: #000;
+}
+
+
+/* Utility Classes */
+
+.container {
+	overflow: hidden;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.second-title {
+	text-align: center;;
+	font-size: 1.5rem;
+}
+
+.scroll-table {
+	overflow-x: scroll;
+}
+
+.main-table {
+	margin: 0 auto;
+	border: 1px solid #000;
+	padding: 1rem;
+	width: 100%;
+}
+
+.main-table th, td {
+	border: 1px solid #000;
+	text-align: center;
+	padding: .5rem;
+	background: #FFF;
+}
+
+.main-table tr:hover td {
+	background: #DDD;
+	cursor: pointer;
+}
+
+.main-btn {
+	width: 100%;
+	margin: .2rem 0;
+	font-size: 1rem;
+	padding: .5rem;
+	border: 1px solid #333;
+	padding: .5rem 0;
+	transition: all 500ms;
+	cursor: pointer;
+}
+.main-btn:hover,
+.main-btn:focus {
+	background: #333;
+	color: #FFF;
+}
+
+.main-input {
+	width: 100%;
+	margin: .2rem 0;
+	font-size: 1rem;
+	padding: .5rem;
+	border: 1px solid #333;
+}
+
+.main-label {
+	cursor: pointer;
+}
+.main-label > .text {
+	width: 100%;
+	margin: .5rem 0;
+	display: inline-block;
+	padding: .5rem;
+}
+.sections {
+	margin-top: 6rem;
+}
+.duration {
+	text-align: center;
+	font-size: 1rem;
+	margin-top:1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px dashed #000;
+}
+.duration::before {
+	content: "Czas wykonywania zapytania : ";
+}
+
+.error {
+	text-align: center;
+	font-size: 8rem;
+	font-style: italic;
+	margin: 0 auto;
+}
+
+.information {
+	letter-spacing: 1px;
+}
+
+/* Classes For JS */
+
+.toggle-padding-in-header {
+	padding: 0;
+}
+.show-scroll-up-element {
+	display: block;
+}
+.valid-input {
+	border: 1px solid #F00;
+}
+
+/* Animation */
+
+@keyframes border_header_animation {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+/* Media */
+
+@media (max-width: 800px) {
+	.main-header .main-nav .main-list .item > .title {
+		position: absolute; 
+		top: 0;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 1rem;
+	}	
+	.error {
+		font-size: 4rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.main-table {
+		border-collapse: collapse;
+	}
+	.main-table th, td {
+		font-size: .9rem;
+		padding: 0;
+	}	
+	.contact {
+		white-space: normal;
+	}
+}
+
+@media (max-width: 754px) {
+	.sections {
+		margin-top: 10rem;
+	}
+}	
+
+@media (min-width: 1600px) {
+	.container {
+		max-width: 1600px;
+	}
+}
+
